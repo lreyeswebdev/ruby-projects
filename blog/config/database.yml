@@ -22,4 +22,5 @@ test:
 
 production:
   <<: *default
-  database: db/blog_production.sqlite3
+  adapter: postgresql
+  database: blog_prod
