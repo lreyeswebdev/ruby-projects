@@ -1,24 +1,33 @@
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Body</th>
-        </tr>
-    </thead>
-
-    <tbody>
+<div class = "columns is-centered mt-6">
+    <div class = "column is-half">
         <% @articles.each do |article| %>
-            <tr>
-                <td><%= article.id %></td>
-                <td><%= article.name %></td>
-                <td><%= article.body %></td>
-                <td><%= link_to 'Edit', edit_article_path(article) %></td>
-                <td><%= link_to 'Show', show_article_path(article) %></td>
-                <td><%= link_to 'Delete', delete_article_path(article), method: :delete, data: {confirm: "Are you sure?"} %></td>
-            </tr>
+        <article class="media">
+        
+            
+            <div class="media-content">
+                <div class="content">
+                    <p>
+                    <span class = "is-size-4"><strong><%= article.name %></strong></span> <small><%="Article # #{article.id}" %></small>
+                    <br>
+                    <%= article.body %>
+                    </p>
+                </div>
+                <nav class="level is-mobile">
+                    <div class="level-left">
+                        <div class="level-item">
+                            <%= link_to 'Edit', edit_article_path(article), class: "button is-small" %>
+                        </div>
+                        <div class="level-item">
+                            <%= link_to 'Show', show_article_path(article), class: "button is-small" %>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="media-right">
+            <%= link_to 'Delete', delete_article_path(article), method: :delete, data: {confirm: "Are you sure?"}, class: "delete" %>
+            </div>
+            
+        </article> 
         <% end %>
-    </tbody>
-</table>
-
-<%= link_to 'New Article', new_article_path %>
+    </div>
+</div>

@@ -1,11 +1,11 @@
-<h1>Displaying Selected Article:</h1>
+<div class = "columns is-centered mt-6">
+    <div class = "column is-half">  
+        <h1 class = "is-size-2 has-text-weight-bold mb-3"><%= @article.name %></h1>
 
-<p>
-Title: <%= @article.name %>
-</p>
+        <div class = "content">
+        <%= @article.body %>
+        </div>
 
-<p>
-Body: <%= @article.body %>
-</p>
-
-<%= link_to 'Back to Articles', articles_path %>
+        <%= link_to 'Back to Articles', articles_path, class: "button" %>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<section class="hero is-dark is-medium", style = "height: 400px;">
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <%= link_to articles_path, class: 'navbar-item' do %>            
+            <span class = 'has-textweight-bold is-size-5'>Blog Posts</span>
+          <% end %>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered", style = "margin-top: -50px;">
+      <h1 class="title">
+        Simple Blog
+      </h1>
+      <h2 class="subtitle">
+        Share your thoughts and ideas
+      </h2>
+      <%= link_to 'Share an article', new_article_path,  class: 'button is-gray' %>
+    </div>
+  </div>
+
+</section>
